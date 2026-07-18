@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "source": "allenai/qasper",
+    "description": "QASPER section-annotated chunks for MVT-RAG evaluation",
+    "total_examples": 2000,
+    "multihop_count": 153
+  },
+  "datasets": [
+    {
+      "dataset": "qasper",
+      "examples": [
+        {
+          "input": "{\"question\": \"How is their model different from BERT?\", \"paper_id\": \"1902.09314\", \"sections\": \"[INTRODUCTION] Introduction (6 chunks); [RELATED_WORK] Related Work (3 chunks); [METHODS] Proposed Method...",
+          "output": "{\"gold_answer\": \"overall architecture of the proposed Attentional Encoder Network (AEN), which mainly consists of an embedding layer, an attentional encoder layer, a target-specific attention layer, a...",
+          "metadata_fold": 0,
+          "metadata_paper_id": "1902.09314",
+          "metadata_question_id": "b67420da975689e47d3ea1c12b601851018c4071",
+          "metadata_is_multihop": false,
+          "metadata_num_sections": 13,
+          "metadata_split": "train",
+          "metadata_evidence_count": 1,
+          "metadata_task_type": "rag_qa"
+        },
+        {
+          "input": "{\"question\": \"What meaningful information does the GRU model capture, which traditional ML models do not?\", \"paper_id\": \"1907.09369\", \"sections\": \"[INTRODUCTION] Introduction (3 chunks); [RELATED_WORK...",
+          "output": "{\"gold_answer\": \" the context and sequential nature of the text\", \"evidence_chunk_ids\": [\"1907.09369_4_1\"], \"evidence_section_names\": [\"Model\"]}",
+          "metadata_fold": 1,
+          "metadata_paper_id": "1907.09369",
+          "metadata_question_id": "1d9aeeaa6efa1367c22be0718f5a5635a73844bd",
+          "metadata_is_multihop": false,
+          "metadata_num_sections": 8,
+          "metadata_split": "validation",
+          "metadata_evidence_count": 1,
+          "metadata_task_type": "rag_qa"
+        },
+        {
+          "input": "{\"question\": \"What are the different bilingual models employed?\", \"paper_id\": \"1910.05154\", \"sections\": \"[INTRODUCTION] Introduction (2 chunks); [METHODS] Methodology ::: The Multilingual Mboshi Paral...",
+          "output": "{\"gold_answer\": \" Neural Machine Translation (NMT) models are trained between language pairs, using as source language the translation (word-level) and as target\", \"evidence_chunk_ids\": [\"1910.05154_2...",
+          "metadata_fold": 0,
+          "metadata_paper_id": "1910.05154",
+          "metadata_question_id": "85abd60094c92eb16f39f861c6de8c2064807d02",
+          "metadata_is_multihop": true,
+          "metadata_num_sections": 6,
+          "metadata_split": "train",
+          "metadata_evidence_count": 3,
+          "metadata_task_type": "rag_qa"
+        }
+      ]
+    }
+  ]
+}

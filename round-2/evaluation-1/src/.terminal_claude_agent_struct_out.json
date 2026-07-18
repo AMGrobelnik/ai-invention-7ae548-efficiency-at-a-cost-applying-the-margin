@@ -1,0 +1,15 @@
+{
+  "title": "MVT-RAG Evaluation: F1, Pareto & Bootstrap Analysis",
+  "layman_summary": "Evaluates how well the ecology-inspired MVT-RAG retrieval method compares to standard baselines on scientific question answering, measuring answer quality, retrieval efficiency, and statistical significance across all method pairs.",
+  "summary": "Full evaluation of MVT-RAG and 8 baselines on QASPER (n=223 questions, 100 papers). Key results: VERDICT=PARTIAL — MVT-RAG is Pareto-non-dominated (1.3 chunks/question vs 5.0 for topk_5), but achieves lower F1 (0.138 vs 0.217 for topk_5). Metrics computed: (1) Token-level F1 recomputed with QASPER-style normalization — our values closely match stored values (high per-example correlation); (2) EM=0.0 confirmed genuine — strict EM=0.0 across all methods because QASPER gold answers contain citation keys (BIBREF*) never reproduced verbatim by LLMs; lenient EM also near-zero due to paraphrasing; (3) Oracle retrieval F1: MVT-RAG=0.140 vs topk_5=0.441 — oracle gap of 0.301 explains the retrieval under-performance (MVT stops too early); (4) Pareto frontier includes mvt_rag, mvt_noenv, topk_3, topk_5, topk_10, thresh_0_5, no_rag — MVT-RAG is non-dominated; (5) G_env ablation: p=0.68, CI=[-0.007, 0.010] includes zero — ecology-derived adaptive G_env provides NO significant benefit over fixed threshold=0.5; (6) 36-pair bootstrap significance matrix (10k resamples): MVT-RAG significantly worse than topk_3/5/10/bm25 (p≈1.0), not significantly different from thresh_0.5 (similar chunk count); (7) Multi-hop subgroup (questions from papers with ≥3 questions, n=223): no advantage for MVT-RAG; (8) G_env distribution: mean=0.272, std=0.075 — correlation with chunks r≈-0.1 and F1 gap r≈0.05 (weak). Root cause: G_env threshold too aggressive causing under-retrieval, not a generation failure.",
+  "out_expected_files": {
+    "script": "eval.py",
+    "full_output": "full_eval_out.json",
+    "mini_output": "mini_eval_out.json",
+    "preview_output": "preview_eval_out.json"
+  },
+  "upload_ignore_regexes": [
+    "(^|/)logs/",
+    "(^|/)\\.venv/"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "title": "QASPER Scientific QA with Section Chunks",
+  "layman_summary": "Downloads the QASPER dataset of scientific paper QA pairs, splits each paper into named section chunks, and produces a structured dataset for evaluating retrieval-augmented generation systems on long scientific documents.",
+  "summary": "This artifact prepares the QASPER dataset (allenai/qasper, Dasigi et al. 2021 NAACL) for MVT-RAG evaluation on long scientific documents. QASPER contains 888 NLP papers with full text, 8,000+ question-answer pairs, and annotated evidence paragraphs. Processing steps: (1) Download train (888 papers) and validation (281 papers) splits from HuggingFace. (2) Parse each paper's full_text into section-level chunks using the columnar section_name/paragraphs schema; normalize section names to IMRaD categories (introduction, methods, results, discussion, related_work, other, preamble). (3) Filter to papers with >=3 distinct normalized section categories (776 of 888 train, 265 of 281 validation pass). (4) Match evidence paragraph strings to chunk IDs via substring overlap >=0.5. (5) Filter to answerable questions with >=1 matched evidence chunk. (6) Sample 2000 questions stratified by is_multihop flag (153 multihop, 1847 single-hop). Output schema per example: input=JSON string with question, paper_id, sections summary; output=JSON string with gold_answer, evidence_chunk_ids, evidence_section_names. Metadata fields: metadata_fold (0=train, 1=validation), metadata_paper_id, metadata_question_id, metadata_is_multihop, metadata_num_sections, metadata_split, metadata_evidence_count, metadata_task_type=rag_qa. The dataset enables evaluation of section-aware retrieval and multi-hop reasoning across paper sections. full_data_out.json: 2000 examples, 3.1MB, schema-validated against exp_sel_data_out.json.",
+  "out_expected_files": {
+    "script": "data.py",
+    "datasets": [
+      {
+        "full": ["full_data_out.json"],
+        "mini": "mini_data_out.json",
+        "preview": "preview_data_out.json"
+      }
+    ]
+  },
+  "upload_ignore_regexes": [
+    "(^|/)temp/"
+  ]
+}

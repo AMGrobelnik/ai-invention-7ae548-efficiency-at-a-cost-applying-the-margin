@@ -1,0 +1,9 @@
+{
+  "total_rows": 2000,
+  "multihop_rows": 153,
+  "singlehop_rows": 1847,
+  "train_rows": 1411,
+  "validation_rows": 589,
+  "validation_errors": 0,
+  "mini_rows": 100
+}
