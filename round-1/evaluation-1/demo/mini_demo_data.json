@@ -1,0 +1,350 @@
+{
+  "metadata": {
+    "evaluation_name": "MVT-RAG vs Baselines F1 & Efficiency Eval",
+    "dataset": "allenai/qasper validation",
+    "n_papers": 3,
+    "n_questions": 8,
+    "total_cost_usd": 0.0384,
+    "verdict": "PARTIAL",
+    "verdict_reason": "MVT-RAG shows partial success: F1=0.214 vs top-k-5 F1=0.191, chunks=1.2 vs 5.0. Multi-hop: MVT=0.138 vs topk5=0.236. G_env ablation delta=-0.0345.",
+    "bootstrap_results": {
+      "mvt_rag_vs_mvt_noenv": {
+        "obs_delta": -0.034516108294375486,
+        "ci_lo": -0.07352182981778568,
+        "ci_hi": 0.00017470300489169643,
+        "p_value": 0.9739
+      },
+      "mvt_rag_vs_topk_3": {
+        "obs_delta": 0.0004177952727535683,
+        "ci_lo": -0.10343881634986754,
+        "ci_hi": 0.09473424851571453,
+        "p_value": 0.4885
+      },
+      "mvt_rag_vs_topk_5": {
+        "obs_delta": 0.022314592722633336,
+        "ci_lo": -0.12193159417314253,
+        "ci_hi": 0.17261369683096445,
+        "p_value": 0.3916
+      },
+      "mvt_rag_vs_topk_10": {
+        "obs_delta": 0.06258229701698986,
+        "ci_lo": -0.08840245527637802,
+        "ci_hi": 0.2209714797788052,
+        "p_value": 0.2229
+      },
+      "mvt_rag_vs_bm25_5": {
+        "obs_delta": 0.08951020489540769,
+        "ci_lo": -0.012970889808604863,
+        "ci_hi": 0.21629201487950778,
+        "p_value": 0.0589
+      },
+      "mvt_rag_vs_flare": {
+        "obs_delta": 0.017739014512862666,
+        "ci_lo": -0.11745512430266743,
+        "ci_hi": 0.13744277259190874,
+        "p_value": 0.3847
+      },
+      "mvt_rag_vs_no_rag": {
+        "obs_delta": 0.16751746427273784,
+        "ci_lo": 0.026650897063305062,
+        "ci_hi": 0.33691018083088853,
+        "p_value": 0.0022
+      }
+    },
+    "ablation_genv": {
+      "obs_delta": -0.034516108294375486,
+      "ci_lo": -0.07352182981778568,
+      "ci_hi": 0.00017470300489169643,
+      "p_value": 0.9739
+    },
+    "stratified_analysis": {
+      "mvt_rag": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.13773584905660377,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.23914807315344952,
+          "mean_em": 0.0
+        }
+      },
+      "mvt_noenv": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.17766203703703703,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.27186082155247243,
+          "mean_em": 0.0
+        }
+      },
+      "topk_3": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.17006802721088435,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.2278136200716846,
+          "mean_em": 0.0
+        }
+      },
+      "topk_5": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.23601973684210525,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.17663398692810459,
+          "mean_em": 0.0
+        }
+      },
+      "topk_10": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.2025586353944563,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.13409741501817884,
+          "mean_em": 0.0
+        }
+      },
+      "bm25_5": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.14814814814814814,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.1163303669290578,
+          "mean_em": 0.0
+        }
+      },
+      "flare": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.19664570230607964,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.1958594360531406,
+          "mean_em": 0.0
+        }
+      },
+      "no_rag": {
+        "multihop": {
+          "n": 2,
+          "mean_f1": 0.05555555555555555,
+          "mean_em": 0.0
+        },
+        "singlehop": {
+          "n": 6,
+          "mean_f1": 0.043184885290148446,
+          "mean_em": 0.0
+        }
+      }
+    },
+    "summary_per_method": {
+      "mvt_rag": {
+        "mean_f1": 0.21379501712923807,
+        "mean_em": 0.0,
+        "mean_chunks": 1.25,
+        "n": 8
+      },
+      "mvt_noenv": {
+        "mean_f1": 0.24831112542361355,
+        "mean_em": 0.0,
+        "mean_chunks": 1.125,
+        "n": 8
+      },
+      "topk_3": {
+        "mean_f1": 0.2133772218564845,
+        "mean_em": 0.0,
+        "mean_chunks": 3.0,
+        "n": 8
+      },
+      "topk_5": {
+        "mean_f1": 0.19148042440660473,
+        "mean_em": 0.0,
+        "mean_chunks": 5.0,
+        "n": 8
+      },
+      "topk_10": {
+        "mean_f1": 0.1512127201122482,
+        "mean_em": 0.0,
+        "mean_chunks": 10.0,
+        "n": 8
+      },
+      "bm25_5": {
+        "mean_f1": 0.12428481223383038,
+        "mean_em": 0.0,
+        "mean_chunks": 5.0,
+        "n": 8
+      },
+      "flare": {
+        "mean_f1": 0.1960560026163754,
+        "mean_em": 0.0,
+        "mean_chunks": 8.5,
+        "n": 8
+      },
+      "no_rag": {
+        "mean_f1": 0.04627755285650022,
+        "mean_em": 0.0,
+        "mean_chunks": 0.0,
+        "n": 8
+      }
+    }
+  },
+  "metrics_agg": {
+    "mvt_rag_f1": 0.2138,
+    "mvt_rag_em": 0.0,
+    "mvt_rag_chunks": 1.25,
+    "mvt_noenv_f1": 0.2483,
+    "mvt_noenv_em": 0.0,
+    "mvt_noenv_chunks": 1.12,
+    "topk_3_f1": 0.2134,
+    "topk_3_em": 0.0,
+    "topk_3_chunks": 3.0,
+    "topk_5_f1": 0.1915,
+    "topk_5_em": 0.0,
+    "topk_5_chunks": 5.0,
+    "topk_10_f1": 0.1512,
+    "topk_10_em": 0.0,
+    "topk_10_chunks": 10.0,
+    "bm25_5_f1": 0.1243,
+    "bm25_5_em": 0.0,
+    "bm25_5_chunks": 5.0,
+    "flare_f1": 0.1961,
+    "flare_em": 0.0,
+    "flare_chunks": 8.5,
+    "no_rag_f1": 0.0463,
+    "no_rag_em": 0.0,
+    "no_rag_chunks": 0.0,
+    "bootstrap_mvt_rag_vs_mvt_noenv_delta": -0.0345,
+    "bootstrap_mvt_rag_vs_mvt_noenv_p": 0.9739,
+    "bootstrap_mvt_rag_vs_topk_3_delta": 0.0004,
+    "bootstrap_mvt_rag_vs_topk_3_p": 0.4885,
+    "bootstrap_mvt_rag_vs_topk_5_delta": 0.0223,
+    "bootstrap_mvt_rag_vs_topk_5_p": 0.3916,
+    "bootstrap_mvt_rag_vs_topk_10_delta": 0.0626,
+    "bootstrap_mvt_rag_vs_topk_10_p": 0.2229,
+    "bootstrap_mvt_rag_vs_bm25_5_delta": 0.0895,
+    "bootstrap_mvt_rag_vs_bm25_5_p": 0.0589,
+    "bootstrap_mvt_rag_vs_flare_delta": 0.0177,
+    "bootstrap_mvt_rag_vs_flare_p": 0.3847,
+    "bootstrap_mvt_rag_vs_no_rag_delta": 0.1675,
+    "bootstrap_mvt_rag_vs_no_rag_p": 0.0022,
+    "ablation_genv_delta": -0.0345
+  },
+  "datasets": [
+    {
+      "dataset": "allenai/qasper_validation",
+      "examples": [
+        {
+          "input": "which multilingual approaches do they compare with?",
+          "output": "BIBREF19 | BIBREF20 | multilingual NMT (MNMT) BIBREF19",
+          "predict_mvt_rag": "Unfortunately, the provided context does not mention which multilingual approaches are being compared.",
+          "eval_f1_mvt_rag": 0.125,
+          "eval_em_mvt_rag": 0.0,
+          "eval_chunks_mvt_rag": 1.0,
+          "predict_mvt_noenv": "Unfortunately, the provided context does not mention which multilingual approaches are being compared.",
+          "eval_f1_mvt_noenv": 0.125,
+          "eval_chunks_mvt_noenv": 1.0,
+          "predict_topk_3": "They compare their cross-lingual pre-training based transfer approach with several strong baselines on two public datasets, Europarl and MultiUN. The baselines are not explicitly mentioned, but the evaluation against them suggests that the approaches are strong and well-established in the field.",
+          "eval_f1_topk_3": 0.0,
+          "eval_chunks_topk_3": 3.0,
+          "predict_topk_5": "They compare their cross-lingual pre-training based transfer approach with two existing cross-lingual pre-training methods: Masked Language Modeling (MLM) and Translation Language Modeling (TLM). These methods have shown effectiveness on the XNLI cross-lingual classification task, but their performance on cross-lingual generation tasks in zero-shot conditions is not well studied.",
+          "eval_f1_topk_5": 0.0,
+          "eval_chunks_topk_5": 5.0,
+          "predict_topk_10": "They compare their approach with three baselines: pivoting, cross-lingual transfer for languages without shared vocabularies, and masked language modeling (MLM) and translation language modeling (TLM) methods. Pivoting is found to be the strongest baseline, while cross-lingual transfer without shared vocabularies performs the worst.",
+          "eval_f1_topk_10": 0.0,
+          "eval_chunks_topk_10": 10.0,
+          "predict_bm25_5": "The authors compare their approaches with pivoting, multilingual NMT (MNMT) BIBREF19, and cross-lingual transfer without pretraining BIBREF16. Pivoting is a strong baseline that multilingual NMT systems often fail to beat. The comparison also includes transfer methods that do not use pretraining.",
+          "eval_f1_bm25_5": 0.1905,
+          "eval_chunks_bm25_5": 5.0,
+          "predict_flare": "They compare their approach with three baselines: pivoting, cross-lingual transfer for languages with shared vocabularies, and cross-lingual transfer for languages without shared vocabularies. The pivoting baseline is found to be the strongest, while the cross-lingual transfer approach without shared vocabularies performs the worst. These baselines are compared in Table TABREF19.",
+          "eval_f1_flare": 0.0,
+          "eval_chunks_flare": 15.0,
+          "predict_no_rag": "I'm unable to provide an answer as there is no context provided.",
+          "eval_f1_no_rag": 0.0,
+          "eval_chunks_no_rag": 0.0,
+          "metadata_multihop": false,
+          "metadata_paper_id": "1912.01214"
+        },
+        {
+          "input": "what are the pivot-based baselines?",
+          "output": "pivoting | pivoting$_{\\rm m}$ | firstly translates a source language into the pivot language which is later translated to the target language",
+          "predict_mvt_rag": "The pivot-based baselines are not explicitly mentioned in the provided context. However, it can be inferred that the \"pivoting\" baseline is one of the pivot-based baselines, which has a significant advantage over the other two baselines.",
+          "eval_f1_mvt_rag": 0.0909,
+          "eval_em_mvt_rag": 0.0,
+          "eval_chunks_mvt_rag": 1.0,
+          "predict_mvt_noenv": "The pivot-based baselines are not explicitly defined in the provided context. However, based on the information given, it can be inferred that the pivot-based baselines are likely the \"pivoting\" baseline mentioned, which is the strongest baseline with a significant advantage over the other two baselines.",
+          "eval_f1_mvt_noenv": 0.0784,
+          "eval_chunks_mvt_noenv": 1.0,
+          "predict_topk_3": "The pivot-based baselines are the pivoting and pivot-synthetic methods. Pivoting involves translating the source language into the pivot language, which is then translated to the target language. Pivot-synthetic trains a source\u2192target model with pseudo data generated from source-pivot or pivot-target parallel data.",
+          "eval_f1_topk_3": 0.36,
+          "eval_chunks_topk_3": 3.0,
+          "predict_topk_5": "The pivot-based baselines are pivoting and pivot-synthetic. Pivoting translates a source language into a pivot language, which is then translated to the target language. Pivot-synthetic trains a source\u2192target model with pseudo data generated from source-pivot or pivot-target parallel data.",
+          "eval_f1_topk_5": 0.4167,
+          "eval_chunks_topk_5": 5.0,
+          "predict_topk_10": "The pivot-based baselines mentioned are pivoting and pivot-synthetic. Pivoting involves translating a source language into a pivot language, which is later translated to the target language. Pivot-synthetic trains a source$\\rightarrow $target model with pseudo data generated from source-pivot or pivot-target parallel data.",
+          "eval_f1_topk_10": 0.3922,
+          "eval_chunks_topk_10": 10.0,
+          "predict_bm25_5": "The pivot-based baselines used in the experiments are traditional transfer learning, pivot-based method, and multilingual NMT. The pivot-based method is further divided into pivoting and pivot-synthetic approaches.",
+          "eval_f1_bm25_5": 0.1053,
+          "eval_chunks_bm25_5": 5.0,
+          "predict_flare": "The pivot-based baselines are the pivoting and pivot-synthetic methods. Pivoting translates a source language into a pivot language, which is later translated to the target language. Pivot-synthetic trains a source\u2192target model with pseudo data generated from source-pivot or pivot-target parallel data.",
+          "eval_f1_flare": 0.449,
+          "eval_chunks_flare": 11.0,
+          "predict_no_rag": "I'm unable to provide a concise answer as there is no context provided.",
+          "eval_f1_no_rag": 0.1538,
+          "eval_chunks_no_rag": 0.0,
+          "metadata_multihop": false,
+          "metadata_paper_id": "1912.01214"
+        },
+        {
+          "input": "which datasets did they experiment with?",
+          "output": "Europarl | MultiUN | Europarl BIBREF31 | MultiUN BIBREF32",
+          "predict_mvt_rag": "The authors experimented with three datasets: Fr-En-Es, De-En-Fr, and Ro-En-De. Fr-En-Es and De-En-Fr were evaluated using the devtest2006 and test2006 sets, while Ro-En-De was evaluated using the newstest2016 set.",
+          "eval_f1_mvt_rag": 0.0,
+          "eval_em_mvt_rag": 0.0,
+          "eval_chunks_mvt_rag": 1.0,
+          "predict_mvt_noenv": "The authors experimented with the following datasets: Europarl and MultiUN corpora, specifically the Fr-En-Es, De-En-Fr, and Ro-En-De language pairs. They also used devtest2006 and test2006 for validation and testing, and newstest2016 for the Ro-En-De language pair.",
+          "eval_f1_mvt_noenv": 0.0606,
+          "eval_chunks_mvt_noenv": 1.0,
+          "predict_topk_3": "The authors experimented with two public datasets: Europarl and MultiUN. They used these datasets to evaluate the zero-shot performance of their cross-lingual pre-training based transfer approach.",
+          "eval_f1_topk_3": 0.08,
+          "eval_chunks_topk_3": 3.0,
+          "predict_topk_5": "The authors evaluated their approach on two public datasets: Europarl and MultiUN. These datasets contain multi-parallel evaluation data to assess the zero-shot performance.",
+          "eval_f1_topk_5": 0.0909,
+          "eval_chunks_topk_5": 5.0,
+          "predict_topk_10": "The authors evaluated their approach on two public datasets: Europarl and MultiUN. They used these datasets to compare their cross-lingual pre-training based transfer approach with several strong baselines. The datasets contain multi-parallel evaluation data to assess the zero-shot performance.",
+          "eval_f1_topk_10": 0.0541,
+          "eval_chunks_topk_10": 10.0,
+          "predict_bm25_5": "The paper does not explicitly mention the specific public datasets used for experiments. However, it mentions that experiments were conducted on public datasets, which shows that the proposed approaches significantly outperform several strong baseline systems.",
+          "eval_f1_bm25_5": 0.0,
+          "eval_chunks_bm25_5": 5.0,
+          "predict_flare": "The authors experimented with three datasets: devtest2006 and test2006 for the language pairs Fr$\\rightarrow$Es and De$\\rightarrow$Fr, and newstest2016 for the language pair Ro$\\rightarrow$De.",
+          "eval_f1_flare": 0.0,
+          "eval_chunks_flare": 1.0,
+          "predict_no_rag": "I'm unable to provide a concise answer as there is no context provided.",
+          "eval_f1_no_rag": 0.0,
+          "eval_chunks_no_rag": 0.0,
+          "metadata_multihop": false,
+          "metadata_paper_id": "1912.01214"
+        }
+      ]
+    }
+  ]
+}
