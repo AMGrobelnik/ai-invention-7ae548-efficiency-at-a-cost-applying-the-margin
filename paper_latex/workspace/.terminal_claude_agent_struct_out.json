@@ -1,0 +1,14 @@
+{
+  "title": "MVT-RAG: Ecology-Inspired Scientific Retrieval",
+  "summary": "Generated a 12-page publication-ready LaTeX paper titled 'Efficiency at a Cost: Applying the Marginal Value Theorem to Scientific Document Retrieval'. The paper proposes MVT-RAG, which applies ecological foraging theory (Marginal Value Theorem) to adaptive section switching in scientific RAG systems evaluated on the QASPER benchmark.\n\nSections written: Abstract, Introduction (with contributions bullet list), Background (Marginal Value Theorem, Information Foraging Theory), Method (Section Parsing/IMRaD Normalization, MVT-RAG Algorithm with 3 equations, Answer Generation), Experimental Setup (Dataset, Baselines, Statistical Testing), Results (with main results table, Pareto analysis, oracle analysis), Analysis (corrected G_env ablation, diagnosis and path to correction, multi-hop analysis), Related Work (Adaptive RAG, Hierarchical RAG, Foraging Theory, QASPER/Scientific QA), Discussion (with Limitations), Conclusion, References.\n\nFigures included (all 3 from available_figures):\n- fig1_v0.jpg: Hero architecture diagram (MVT-RAG pipeline, 21:9, full-width figure*)\n- fig2_v0.jpg: Pareto frontier scatter plot (21:9, full-width figure*)\n- fig3_v0.jpg: G_env distribution histogram + ablation CI forest plot (21:9, full-width figure*)\n\nBibliography: 13 entries in references.bib. All 13 paper references from the paper text are covered. BibTeX fetched via Semantic Scholar for 11 entries; Charnov 1976 and Pirolli 2007 written manually from verified publication data. Bogus Qian2025 match corrected manually.\n\nCompilation: Run pdflatex (pass 1), bibtex.original, pdflatex (pass 2), pdflatex (pass 3). All citations resolve correctly. PDF is 12 pages, 1.45MB.\n\nVisual review: All 12 pages inspected at 150 DPI. Layout is clean with no overlapping figures, cut-off text, or formatting problems. All three figures render at appropriate size. Table 1 is properly formatted with booktabs. Footnotes with GitHub URLs render correctly. Math equations (4 numbered equations) render properly. References section is complete with all 13 entries.",
+  "out_expected_files": {
+    "paper_tex_path": "paper.tex",
+    "paper_pdf_path": "paper.pdf",
+    "references_bib_path": "references.bib",
+    "figure_paths": [
+      "figures/fig1_v0.jpg",
+      "figures/fig2_v0.jpg",
+      "figures/fig3_v0.jpg"
+    ]
+  }
+}
